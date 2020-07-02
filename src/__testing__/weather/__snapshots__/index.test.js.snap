@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Weather component SNAPSHOT Test 1`] = `
+<div
+  className="weather"
+>
+  <img
+    alt="Cargando..."
+    src="Rolling-1s-200px.svg"
+  />
+  <br />
+  Cargando...
+</div>
+`;
+
+exports[`Test Weather component SNAPSHOT Test 2`] = `
+<div
+  className="weather"
+>
+  <div
+    className="weather-header"
+  />
+  <div
+    className="weather-body"
+  >
+    <div
+      className="weather-body__img"
+    >
+      <img
+        alt="weather icon"
+        src="http://openweathermap.org/img/wn/04d@2x.png"
+      />
+    </div>
+    <div
+      className="weather-body__degree"
+    >
+      11
+      °
+    </div>
+  </div>
+  <div
+    className="weather-footer"
+  >
+    <div
+      className="weather-footer__info"
+    >
+      nubes rotas
+    </div>
+    <div
+      className="weather-footer__date"
+    >
+      (Clima actual)
+    </div>
+  </div>
+</div>
+`;
