@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { getCentrigrados } from '../utilities/utils';
-//import moment from 'moment';
 import moment from 'moment';
 import 'moment/locale/es' 
 import iconoLoading from '../../assets/Rolling-1s-200px.svg';

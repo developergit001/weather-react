@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import WeatherContainer from "../weathercontainer";
+import Error from "../error";
 import axios from "axios";
 import iconoLoading from '../../assets/Rolling-1s-200px.svg';
 import { getBackUrl } from '../utilities/utils';
@@ -55,10 +56,7 @@ const Main = () => {
 
     if (huboError){
         return (
-            <div className="error" >
-                Hubo un error, por favor recargá la página.
-                <br /><span className="error__sorry">Disculpe las molestias ocacionadas.</span>
-            </div>
+            <Error></Error>
         );
     } else  {
 
