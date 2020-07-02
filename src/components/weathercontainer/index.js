@@ -106,7 +106,7 @@ const WeatherContainer = (props) => {
                     </div>
                     {forecastLoading && (
                         <div className='main__loading' >
-                            <img src={iconoLoading} alt="Cargando..." />
+                            <img src={iconoLoading} alt="Cargando..." /><br />Cargando...
                         </div>
                     )}                     
                     {forecastData.length !== 0 && (

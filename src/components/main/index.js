@@ -71,7 +71,7 @@ const Main = () => {
                     <div className="main__header" >
                         {geoLoading && (
                             <div className='main__geoinfo' >
-                                <img src={iconoLoading} alt="Cargando..." />
+                                <img src={iconoLoading} alt="Cargando..." /><br />Cargando...
                             </div>
                         )}
                         {!geoLoading && (

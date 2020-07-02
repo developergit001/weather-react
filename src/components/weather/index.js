@@ -36,7 +36,7 @@ function Weather(props) {
         return(
           <Fragment>
             <div className="weather">
-              <img src={iconoLoading} alt="Cargando..." />
+              <img src={iconoLoading} alt="Cargando..." /><br />Cargando...
             </div>
           </Fragment>
         );
