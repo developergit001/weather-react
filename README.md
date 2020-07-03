@@ -1,5 +1,11 @@
 Weather React App que consume nodejs api basado en https://openweathermap.org/api
 
+Se realizo la solución frontend y backend completa.
+
+Este proyecto https://github.com/developergit001/weather-react.git
+
+backend en nodejs: https://github.com/developergit001/weathernodejs.git
+
 #Para correr la app
 npm start
 
@@ -15,7 +21,7 @@ npm test[ENTER]
 #Datos varios:
 El backend de node estaria corriendo en http://localhost:8080 por defecto.
 
-En esta ruta se puede cambiar el host por el indicado.
+En esta ruta se puede cambiar el host si cambian el port del backend.
 src\components\utilities\utils.js
 
 endpoints usados (pedidos segun el challenge):
