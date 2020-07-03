@@ -23,16 +23,34 @@ Todos los assertions estan en la siguiente ruta:
 src/__testing__/all.test.js
 
 #Para correr los tests usar:
-npm test[ENTER]
+npm test
 
 Comandos utiles para el testing
 Al correr npm test en la terminal se tienen opciones para correrlos, tocar la tecla "a" corre todos los test encontrados.
 
+Ejemplo al correr npm test y luego opcion "a"
+
+ PASS  src/__testing__/all.test.js
+  √ Prueba de mock fake testing simulando ajax request (6ms)
+  √ Unit Test fx getCentrigrados  (12ms)
+  √ Componente Weather: imagen de icono de clima, bien armada (34ms)
+  √ Test Weather component SNAPSHOT Test (16ms)
+  √ Prueba de contenido Existe un mensaje de bienvenida en la app (27ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   2 passed, 2 total
+Time:        3.608s
+
+
 ###########################################################################################################
 #Ejemplo de opciones
 
+
 No tests found related to files changed since last commit.
+
 Press `a` to run all tests, or run Jest with `--watchAll`.
+
 
 Watch Usage
  › Press a to run all tests.
@@ -41,6 +59,7 @@ Watch Usage
  › Press p to filter by a filename regex pattern.
  › Press t to filter by a test name regex pattern.
  › Press Enter to trigger a test run.
+ 
 ###########################################################################################################
 
 ###########################################################################################################
