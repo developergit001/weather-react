@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {render, cleanup, waitForElement} from '@testing-library/react';
 import Weather from "../components/weather";
-import { getCentrigrados, getWeather } from '../components/utilities/utils';
+import { getCentrigrados, getWeather, getWeatherEndPoint } from '../components/utilities/utils';
 import Main from '../components/main';
 import mockAxios from "../__mocks__/axios";
 
@@ -21,7 +21,8 @@ PRUEBAS: Este archivo tiene realizada todas las posibles pruebas a modo de ejemp
 
 it('Prueba de mock fake testing simulando ajax request', async () => {
 
-    const resdata = {"cod":0,"entity":{"coord":{"lon":12.48,"lat":41.89},"weather":[{"id":800,"main":"Clear","description":"cielo claro","icon":"01d"}],"base":"stations","main":{"temp":295.62,"feels_like":296.88,"temp_min":294.26,"temp_max":298.15,"pressure":1011,"humidity":83},"visibility":10000,"wind":{"speed":3.1,"deg":130},"clouds":{"all":0},"dt":1593748201,"sys":{"type":1,"id":6792,"country":"IT","sunrise":1593747586,"sunset":1593802118},"timezone":7200,"id":3169070,"name":"Rome","cod":200}};
+  //Dato de respuesta emulado
+  const resdata = {"cod":0,"entity":{"coord":{"lon":12.48,"lat":41.89},"weather":[{"id":800,"main":"Clear","description":"cielo claro","icon":"01d"}],"base":"stations","main":{"temp":295.62,"feels_like":296.88,"temp_min":294.26,"temp_max":298.15,"pressure":1011,"humidity":83},"visibility":10000,"wind":{"speed":3.1,"deg":130},"clouds":{"all":0},"dt":1593748201,"sys":{"type":1,"id":6792,"country":"IT","sunrise":1593747586,"sunset":1593802118},"timezone":7200,"id":3169070,"name":"Rome","cod":200}};
   // setup
   mockAxios.get.mockImplementationOnce(() =>
     Promise.resolve(resdata)
@@ -29,11 +30,13 @@ it('Prueba de mock fake testing simulando ajax request', async () => {
     const cityId = "3169070"; //pasamos como city a Roma.
     const datos = await getWeather(cityId);
     expect(datos).toEqual(resdata);
-    //let endpointurl = getWeatherEndPoint() + "/" + cityId;
+    expect(mockAxios.get).toHaveBeenCalledTimes(1);
+    let endpointurl = getWeatherEndPoint() + "/" + cityId;
 
-    //expect(axios.get).toHaveBeenCalledWith(
-    //    endpointurl,
-    //);
+    expect(mockAxios.get).toHaveBeenCalledWith(
+      endpointurl
+      //,{params: {cityId:cityId}}
+    );
 
 });
 
