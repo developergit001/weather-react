@@ -51,7 +51,7 @@ function Weather(props) {
                     }
                     <div className="weather-body" >
                         <div className="weather-body__img" >
-                            {(imgurl) && (<img src={imgurl} alt="weather icon" />)}
+                            {(imgurl) && (<img data-testid="icon-weather-img" src={imgurl} alt="weather icon" />)}
                         </div>
                         <div className="weather-body__degree" >
                             {grados}°

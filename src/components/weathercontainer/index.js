@@ -76,7 +76,7 @@ const WeatherContainer = (props) => {
                 setForeCastData([]);
                 setWeatherLoading(true);
                 setForeCastLoading(true);                
-                console.log("didupdate?-cityId:"+cityId+"-propCityId:"+propCityId);
+                //console.log("didupdate?-cityId:"+cityId+"-propCityId:"+propCityId);
                 setCityId(propCityId);
                 setDataWeather(propCityId);               
             }

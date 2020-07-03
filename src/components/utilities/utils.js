@@ -3,6 +3,7 @@
 function myTrim(x) {
     return x.replace(/^\s+|\s+$/gm,'');
 }
+//Conversion Kelvin 2 grados centigrados. (sin decimales)
 function getCentrigrados(gradosKelvin){
     //return (gradosF !== '')?(((gradosF - 32) * 5)/9):gradosF;
     return (gradosKelvin !== '')?(Number(gradosKelvin) - 273.15).toFixed(0):gradosKelvin;    

@@ -28,6 +28,7 @@ exports[`Test Weather component SNAPSHOT Test 2`] = `
     >
       <img
         alt="weather icon"
+        data-testid="icon-weather-img"
         src="http://openweathermap.org/img/wn/04d@2x.png"
       />
     </div>
