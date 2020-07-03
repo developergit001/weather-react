@@ -1,9 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Weather from "../weather";
 import Error from "../error";
-import axios from "axios";
-import iconoLoading from '../../assets/Rolling-1s-200px.svg';
-import { getBackUrl } from '../utilities/utils';
+import Loading from "../loading";
+import { getWeather, getForeCast } from '../utilities/utils';
 import './style.css';
 
 const WeatherContainer = (props) => {
@@ -15,22 +14,6 @@ const WeatherContainer = (props) => {
     const [forecastCity, setForeCastCity] = useState("");
     const [cityId, setCityId] = useState("-1");
 
-    const getWeather = async (cityId) => {
-        if (cityId !== "")
-        cityId = "/" + cityId;
-        let url = getBackUrl() + "/v1/current" + cityId;
-        const output = await axios.get(url);    
-        let data = output.data
-        return data
-    }
-    const getForeCast = async (cityId) => {
-        if (cityId !== "")
-        cityId = "/" + cityId;        
-        let url = getBackUrl() + "/v1/forecast" + cityId;
-        const output = await axios.get(url);
-        let data = output.data
-        return data
-    }
     /*
     Si estás familiarizado con el ciclo de vida de las clases de React y sus métodos, 
     el Hook useEffect equivale a: 
@@ -50,15 +33,23 @@ const WeatherContainer = (props) => {
             const setDataWeather = async (cityId) => {
                 try{
                     let reswet = await getWeather(cityId);
+                    reswet = reswet.data;
                     if (reswet.cod === 0 && reswet.entity){
                         setWeatherData(reswet.entity);
+                    } else {
+                        setError(true);
                     }
-                    let resfore = await getForeCast(cityId);
-                    if (resfore.cod === 0 && resfore.entity && resfore.entity.list){
-                        setForeCastData(resfore.entity.list);
-                        if (resfore.entity.city && resfore.entity.city.name)
-                        setForeCastCity(resfore.entity.city.name);
-                    }       
+                    if (!huboError){
+                        let resfore = await getForeCast(cityId);
+                        resfore = resfore.data;
+                        if (resfore.cod === 0 && resfore.entity && resfore.entity.list){
+                            setForeCastData(resfore.entity.list);
+                            if (resfore.entity.city && resfore.entity.city.name)
+                            setForeCastCity(resfore.entity.city.name);
+                        } else {
+                            setError(true);
+                        }    
+                    }
                     setWeatherLoading(false);
                     setForeCastLoading(false);
                 } catch(err){
@@ -81,7 +72,7 @@ const WeatherContainer = (props) => {
                 setDataWeather(propCityId);               
             }
         },
-        [props,cityId]
+        [props,cityId,huboError]
     );
     if (huboError){
         return (
@@ -104,7 +95,7 @@ const WeatherContainer = (props) => {
                     </div>
                     {forecastLoading && (
                         <div className='main__loading' >
-                            <img src={iconoLoading} alt="Cargando..." /><br />Cargando...
+                            <Loading></Loading>
                         </div>
                     )}                     
                     {forecastData.length !== 0 && (

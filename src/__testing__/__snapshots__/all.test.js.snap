@@ -4,12 +4,23 @@ exports[`Test Weather component SNAPSHOT Test 1`] = `
 <div
   className="weather"
 >
-  <img
-    alt="Cargando..."
-    src="Rolling-1s-200px.svg"
-  />
-  <br />
-  Cargando...
+  <div
+    className="loading"
+  >
+    <div
+      className="loading__img"
+    >
+      <img
+        alt="Cargando..."
+        src="Rolling-1s-200px.svg"
+      />
+    </div>
+    <div
+      className="loading__txt"
+    >
+      Cargando...
+    </div>
+  </div>
 </div>
 `;
 
