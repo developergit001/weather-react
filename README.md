@@ -9,9 +9,9 @@ Este proyecto https://github.com/developergit001/weather-react.git
 backend en nodejs: https://github.com/developergit001/weathernodejs.git
 
 ###########################################################################################################
-#Para correr la app
+#Para installar y correr la app
 npm install
-y luego 
+
 npm start
 ###########################################################################################################
 
