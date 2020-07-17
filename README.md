@@ -1,15 +1,15 @@
 ###########################################################################################################
 Gabriel Pablo Caraballo
-Weather React App que consume nodejs api basado en https://openweathermap.org/api
+Frontend Weather React App that consume nodejs api based on https://openweathermap.org/api
 
-Se realizo la solución frontend y backend completa.
+This is a complete (backend and frontend) solution.
 
-Este proyecto https://github.com/developergit001/weather-react.git
+Current project https://github.com/developergit001/weather-react.git
 
-backend en nodejs: https://github.com/developergit001/weathernodejs.git
+backend in nodejs: https://github.com/developergit001/weathernodejs.git
 
 ###########################################################################################################
-#Para installar y correr la app
+#To install and run the app
  
 npm install
 
@@ -17,18 +17,18 @@ npm start
 ###########################################################################################################
 
 ###########################################################################################################
-#TESTING: En este caso se usa jest y react-test-renderer
+#TESTING: We use jest y react-test-renderer
 ###########################################################################################################
-Todos los assertions estan en la siguiente ruta:
+All the assertions are in the next route:
 src/__testing__/all.test.js
 
-#Para correr los tests usar:
+#To run the test you can run:
 npm test
 
-Comandos utiles para el testing
-Al correr npm test en la terminal se tienen opciones para correrlos, tocar la tecla "a" corre todos los test encontrados.
+Commands for testing
+When you run "npm test" in the terminal, you have the options, you can press the "a" key and run all the test at once.
 
-Ejemplo al correr npm test y luego opcion "a"
+Example when you run "npm test" and press "a" key/option
 
  PASS  src/__testing__/all.test.js
   √ Prueba de mock fake testing simulando ajax request (6ms)
@@ -44,7 +44,7 @@ Time:        3.608s
 
 
 ###########################################################################################################
-#Ejemplo de opciones
+#Example of options
 
 
 No tests found related to files changed since last commit.
@@ -63,14 +63,13 @@ Watch Usage
 ###########################################################################################################
 
 ###########################################################################################################
-#Datos varios:
-El backend de node estaria corriendo en http://localhost:8080 por defecto.
+#Comments:
+The backend in nodejs is running on http://localhost:8080 by default.
 
-En esta ruta se puede cambiar el host si cambian el port del backend.
+You can change the host/port here:
 src\components\utilities\utils.js
 
-endpoints usados (pedidos segun el challenge):
-
+Used endpoints:
 Current GEO Lat, Lon
 http://localhost:8080/v1/location
 
@@ -86,7 +85,7 @@ http://localhost:8080/v1/forecast
 Next 5 days Weather for Argentina
 http://localhost:8080/v1/forecast/3435907
 
-Info adicional sobre openweathermap / enlaces de interes.
+Aditional info/links:
 
 List of all countries
 http://bulk.openweathermap.org/sample/
