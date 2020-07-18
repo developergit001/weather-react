@@ -5,7 +5,8 @@ function getBackUrl(){
     return "http://localhost:8080";
 }
 function getGeoEndPoint(){
-    return getBackUrl() + "/v1/location";
+    //return getBackUrl() + "/v1/location"; //nodebackend dont really response with the same geolocation than the client.
+    return "http://ip-api.com/json";
 }
 function getWeatherEndPoint(){
     return getBackUrl() + "/v1/current";

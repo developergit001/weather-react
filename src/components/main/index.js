@@ -16,8 +16,8 @@ const Main = () => {
     }
     const setDataGeo = async () => {
         try{
-            let geores = await getGeo();
-            geores = geores.data;
+            let resgeo = await getGeo();
+            let geores = {cod:0,entity:resgeo.data}; //for compatibility purpose only
             if (geores.cod === 0 && geores.entity){
                 let tmphash = {"country":"","lat":"","lon":"","regionName":"","zip":"","ip":""};
                 tmphash.country =    (geores.entity.country)?      "Pais " + geores.entity.country:"";
