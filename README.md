@@ -85,3 +85,7 @@ http://bulk.openweathermap.org/sample/
 _Icons example:
 https://openweathermap.org/weather-conditions
 http://openweathermap.org/img/wn/10d@2x.png
+
+## UI STYLE:
+_The UI and style are very basic (yes, very very i know...), this demo is not about the UI or style in a front end app, be aware, thanks!_
+
